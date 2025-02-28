@@ -1,0 +1,21 @@
+.language-button {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.language-button::after {
+    transition: all 0s !important;
+}
+.language-button:hover::after {
+    border: 0px solid transparent;
+    border-radius: 0px;
+}
+.globe-span {
+    height: 100%;
+    padding-right: 0.5rem;
+}
+.globe-span  img {
+      height: 24px;
+      margin-left: 0.4rem;
+    }
+

@@ -1,0 +1,16 @@
+@media (min-width: 1024px) {
+  .item:hover > .more {
+    display: flex;
+  }
+
+  .border::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    border-radius: 0.5rem;
+    height: 2.5px;
+    background-color: #d91631;
+    width: 90px;
+  }
+}

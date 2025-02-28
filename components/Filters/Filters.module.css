@@ -1,0 +1,20 @@
+#chevron {
+    transition: transform .45s ease;
+}
+
+.chevronrotate {
+    transform: rotate(180deg);
+}
+
+.slide {
+    animation: slide .5s ease;
+}
+
+@keyframes slide {
+    from {
+        margin-left: -10rem;
+    }
+    to {
+        margin: 0;
+    }
+}
