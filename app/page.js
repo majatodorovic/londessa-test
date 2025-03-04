@@ -56,16 +56,21 @@ const Home = async () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <div className="block relative overflow-hidden">
-      <div
-  className={`relative ${
-    banners?.length === 0 && mobileBanners?.length === 0 
-      ? "h-0 overflow-hidden hidden max-sm:-mt-[80px]" // Povlači sadržaj nagore na mobilnom
-      : "max-sm:h-[400px] md:h-[510px] lg:h-[690px] xl:h-[700px] 2xl:h-[750px] 3xl:h-[800px]"
-  }`}
-  id="slider"
->
-  <IndexSlider banners={banners} mobileBanners={mobileBanners} />
-</div>
+        <div
+          className={`relative transition-all duration-300 ${!banners?.length && !mobileBanners?.length
+              ? "h-0 overflow-hidden hidden max-sm:-mt-[80px]" // Nema nijednog banera
+              : banners?.length && !mobileBanners?.length
+                ? "h-[700px] max-sm:h-0" // Samo desktop
+                : !banners?.length && mobileBanners?.length
+                  ? "h-0 max-sm:h-[400px]" // Samo mobilni
+                  : "h-[700px] max-sm:h-[400px]" // Oba postoje
+            }`}
+          id="slider"
+        >
+          <IndexSlider banners={banners} mobileBanners={mobileBanners} />
+        </div>
+
+
 
         {recommendedProducts?.length > 0 && (
           <div className="overflow-hidden">
